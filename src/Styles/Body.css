@@ -1,0 +1,524 @@
+:root {
+    --cj-dark-blue-1: #345f9e;
+    --cj-dark-blue-2: #0c2244;
+
+    /* Primary brand blue for icons/borders/underline */
+    --brand-blue: #0d475d;
+    /* Lighter accent blue for icon circles and light shadows */
+    --light-border-blue: #a3c1e0;
+    --text-color: #3b4e6d;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+.hero-video-box {
+    width: 900px;
+    height: 500px;
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+    /* Smooth border glow */
+    border: 2px solid rgba(0, 100, 200, 0.25);
+    box-shadow:
+        0 0 25px rgba(0, 120, 255, 0.25),
+        0 15px 40px rgba(0, 80, 160, 0.1);
+}
+
+/* Video fits perfectly inside */
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* no controls or interaction */
+}
+.hero-section {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding-top: 120px !important;
+    padding: 0 80px;
+    position: relative;
+
+    /* Premium background */
+    background: linear-gradient(135deg, #ffffff 0%, #f7faff 50%, #eef5ff 100%);
+    overflow: hidden;
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -150px;
+    top: -100px;
+    background: rgba(0, 138, 255, 0.15);
+    filter: blur(120px);
+    z-index: 0;
+}
+.hero-orb {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.55;
+    z-index: 0;
+}
+
+.orb-1 {
+    background: #39ddef;
+    top: -120px;
+    left: -80px;
+    animation: floatOrb1 12s infinite ease-in-out;
+}
+
+.orb-2 {
+    background: #6fa8ff;
+    bottom: -150px;
+    right: -100px;
+    animation: floatOrb2 10s infinite ease-in-out;
+}
+
+@keyframes floatOrb1 {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(50px,40px); }
+    100% { transform: translate(0,0); }
+}
+
+@keyframes floatOrb2 {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-60px,-30px); }
+    100% { transform: translate(0,0); }
+}
+
+/* text container */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 460px;
+}
+
+.hero-title {
+    font-size: 3.7rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #39ddef, #025ca0);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    color: #44526f;
+    margin-top: 18px;
+    font-weight: 400;
+}
+.nav-link-btn {
+    margin-top: 35px;
+    padding: 14px 28px;
+    width: 280px;
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #025a8d, #4eb8ed);
+    transition: 0.3s ease;
+}
+
+.nav-link-btn {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* responsive layout */
+@media (max-width: 1100px) {
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+        padding: 120px 40px;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-video-box {
+        width: 100%;
+        max-width: 700px;
+        height: 400px;
+    }
+}
+
+.hero-title,
+.hero-subtitle,
+.nav-link-btn {
+    font-family: inherit;
+    /* inherit from body */
+}
+
+/* animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll reveal animation */
+
+.reveal-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- TRUST US SECTION CONTAINER (Adopting Features Section Look) --- */
+
+/* Reusing the .trustus_cont base, but updating styling to match .features-section */
+.trustus_cont {
+    /* Base color matching the features section background transition */
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+    padding: 46px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.trustus-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+@media (min-width: 768px) {
+    .trustus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .trustus-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.trust-us-content {
+    /* Ensures max-width and centering, similar to .features-container */
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- HEADER STYLES (Adopting Features Header Look) --- */
+.trustus-header-wrapper {
+    /* New wrapper for header to center content like .features-header */
+    text-align: center;
+    margin-bottom: 64px;
+
+}
+
+.trustus-header-wrapper .why-trust-wrapper {
+    text-align: left !important;
+    width: 100%;
+    margin-left: 0;
+}
+
+.why-trust-wrapper {
+    position: relative;
+    display: inline-block;
+    text-align: left !important;
+    /* FIX */
+    padding-bottom: 12px;
+}
+
+
+.why-trust-wave {
+    width: 140px;
+    height: 30px;
+    display: block;
+    margin-top: 8px;
+    margin-left: 0;
+    /* aligns with heading */
+}
+
+.trustus-badge-wrapper {
+    /* Adopted from .feature-badge-wrapper */
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(52, 95, 158, 0.1);
+    /* Using cj-dark-blue-1 for the badge background */
+    border-radius: 9999px;
+    margin-bottom: 16px;
+}
+
+.trustus-badge-text {
+    /* Adopted from .feature-badge-text */
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cj-dark-blue-1);
+    /* Using cj-dark-blue-1 for text color */
+}
+
+.why-trust-text {
+    display: inline-block;
+    /* required for background to match text width */
+    background: linear-gradient(90deg, #0c2244 0%, #4074b4 60%, #9fd6ff 100%);
+    background-size: 200% 100%;
+    /* stretch so the light-blue is visible */
+    background-position: left center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    /* force transparent */
+    color: transparent !important;
+    /* fallback */
+    font-weight: 800;
+    white-space: nowrap;
+    /* keep title on one line if desired */
+}
+
+.why-trust-row {
+    display: flex;
+    align-items: flex-start;
+    /* IMPORTANT: Align items to the top to ensure the text sits next to the title */
+    gap: 20px;
+    justify-content: flex-end;
+    /* Center the whole title-and-text block */
+    flex-wrap: wrap;
+
+    /* Constraint for the content block (Title + Text) so they don't stretch too wide */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.trustus-header-text {
+    max-width: 850px;
+    font-size: 16px;
+    margin: 0;
+    align-items: left;
+    text-align: left;
+}
+
+/* Wavy Underline FIX: Hide the wave when adopting the new header style */
+.trustus_header_container::after {
+    display: none;
+}
+
+/* Hide the old header container padding/positioning */
+.trustus_header_container {
+    padding-bottom: 0;
+    position: static;
+    display: block;
+}
+
+
+/* --- CARD STYLES (Adopting Features Card Look) --- */
+.trustus-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.trust-card {
+    /* Critical: Ensures card takes full height of the grid cell */
+    flex: 1;
+    padding: 32px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+
+    /* Essential: Sets up vertical distribution */
+    display: flex;
+    flex-direction: column;
+
+    /* Forces content distribution (Icon/Title at top, Description text at bottom) */
+    justify-content: space-between;
+
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Hover Effect: Identical to .feature-card-wrapper:hover */
+.trust-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15),
+        0 0 10px 5px rgba(52, 95, 158, 0.15);
+    /* Using cj-dark-blue-1 tint */
+}
+
+.features-title-highlight {
+    /* Adopted from .feature-card-title */
+    font-size: 2.50rem;
+    font-weight: 700;
+    color: #121b2e;
+    margin-bottom: 12px;
+    margin-top: 15px;
+    /* Keep some margin above title */
+    text-align: left;
+}
+
+.trust-description {
+    /* NEW: Allows the description text box to take up any excess vertical space */
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    /* NEW: Sets top margin to create a consistent gap between title and description */
+    margin-top: 10px;
+
+    /* NEW: Ensures the description text is positioned at the bottom of its now-stretched box */
+    align-self: flex-end;
+
+    color: #4B5563;
+    line-height: 1.625;
+    text-align: left;
+    font-size: 0.80rem;
+}
+
+/* --- ICON WRAPPER STYLES (Adopting Features Icon Box Look) --- */
+
+.trust-icon-wrapper {
+    /* Adopted from .feature-icon-box - Square box with gradient */
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    /* Square with rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    /* Remove auto margin */
+    margin-right: auto;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s ease-in-out;
+    border: none;
+    /* Remove circular border */
+    background-color: var(--cj-dark-blue-1);
+    /* Placeholder background */
+}
+
+/* Icon Box Hover Effect: Identical to .feature-card-wrapper:hover .feature-icon-box */
+.trust-card:hover .trust-icon-wrapper {
+    transform: scale(1.1);
+}
+
+.trust-icon {
+    /* Making icons white to stand out on the gradient box */
+    width: 28px;
+    height: 28px;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* --- COMMITMENT BANNER STYLING & SPACING FIX --- */
+
+.trust-commitment-banner {
+    background-color: #e0f2fe;
+    border-radius: 16px;
+    border: 1px solid #93c5fd;
+    /* 1. Fix Spacing: Increase top margin to push it down from the cards */
+    margin-top: 64px;
+    /* A larger gap than the default mt-5/35px equivalent */
+    padding: 24px;
+    /* Add explicit padding inside the banner */
+}
+
+.commitment-content-wrapper {
+    display: flex;
+    align-items: center;
+    /* Use 'center' to align content vertically */
+    gap: 20px;
+    flex-wrap: nowrap;
+    margin-right: 0;
+}
+
+/* 2. Fix Separator: Use a pseudo-element for a short line */
+.commitment-title-wrapper {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    /* Set padding to create space for the line */
+    padding-right: 20px;
+    /* IMPORTANT: Remove the old border property here */
+    border-right: none;
+}
+
+/* NEW: The short, standalone separator line */
+.commitment-title-wrapper::after {
+    content: '';
+    display: block;
+    height: 40px;
+    /* Short line height (adjust as needed) */
+    width: 2px;
+    background-color: #93c5fd;
+    /* Add space between the title text and the line */
+    margin-left: 20px;
+}
+
+.commitment-title {
+    /* Title font weight is correct (700 is a good bold) */
+    font-weight: 700;
+    font-size: 22px;
+    color: #1a3a6b;
+    margin-bottom: 0;
+}
+
+.commitment-text {
+    flex-grow: 1;
+    /* Vertically align the text content */
+    display: flex;
+    align-items: center;
+
+    color: #1a3a6b;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+    /* Remove padding-left as the line is now a pseudo-element */
+    padding-left: 0;
+}
+
+/* --- Mobile Layout Fix (Keep for Responsiveness) --- */
+@media (max-width: 767px) {
+    .commitment-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .commitment-title-wrapper {
+        width: 100%;
+        padding-right: 0;
+        border-bottom: 2px solid #93c5fd;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        /* Ensure the title is centered when stacking */
+        justify-content: center;
+    }
+
+    /* Hide the vertical line on mobile when it stacks */
+    .commitment-title-wrapper::after {
+        display: none;
+    }
+
+    .commitment-text {
+        width: 100%;
+        padding-left: 0;
+    }
+}

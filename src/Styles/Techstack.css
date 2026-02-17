@@ -1,0 +1,145 @@
+/* --- Techstack Section Container --- */
+.tech-cont {
+    background: radial-gradient(80% 90% at 50% 0%, #134e78 0%, #06192e 50%, #020b14 100%);
+    padding: 80px 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 0.8s ease-out;
+    font-family: inherit; /* Ensure index.css font is used */
+}
+
+.reveal-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Header Section --- */
+.tech-header-section {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.tech-badge {
+    color: #63b3ed;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.tech-title {
+    font-size: 44px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #4dc0b5;
+}
+
+.tech-subtitle {
+    color: #a0aec0;
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Card Grid Layout --- */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* --- Individual Tech Card --- */
+.tech-card {
+    background-color: rgba(10, 25, 47, 0.85);
+    border-radius: 16px;
+    text-align: center;
+    padding: 40px 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 3D Hover Effect */
+.tech-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+    background-color: rgba(15, 30, 55, 0.95);
+}
+
+/* --- Icon Wrapper --- */
+.tech-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: #0d47a1;
+    border-radius: 12px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(13, 71, 161, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tech-card:hover .tech-icon-wrapper {
+    transform: scale(1.2);
+    box-shadow: 0 0 25px rgba(13, 71, 161, 0.7);
+}
+
+.tech-icon {
+    color: white;
+    font-size: 32px;
+}
+
+.python-icon {
+    width: 85px;
+    height: 85px;
+}
+
+/* --- Card Text --- */
+.tech-card-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tech-card-description {
+    color: #a0aec0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* --- Footer Text --- */
+.tech-footer-text {
+    color: #63b3ed;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .tech-title {
+        font-size: 36px;
+    }
+
+    .tech-subtitle {
+        font-size: 16px;
+    }
+
+    .tech-card {
+        padding: 30px 15px;
+    }
+
+    .tech-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+}

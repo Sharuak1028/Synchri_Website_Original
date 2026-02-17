@@ -1,0 +1,22 @@
+/* Add a simple CSS Reset to replace Bootstrap's defaults */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base font is now guaranteed by the existing rule: */
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5; /* Good default line height */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* General container for centering content (replaces Bootstrap's .container) */
+.container {
+    max-width: 1180px; /* Use a consistent max width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px; /* Add padding for mobile screens */
+    padding-right: 15px;
+}

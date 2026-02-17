@@ -1,0 +1,177 @@
+/* Section > Teal Card > White Boxes */
+
+/* ==================================================== */
+/* 1. MAIN SECTION (White/Light Background) */
+/* ==================================================== */
+.testimonials-section {
+    padding: 100px 40px; 
+    background-color: #f7f9fb;
+    display: flex;
+    justify-content: center;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+.testimonials-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ==================================================== */
+/* 2. TEAL CARD WRAPPER (The Big Middle Layer) */
+/* ==================================================== */
+.teal-card-wrapper {
+    background: radial-gradient(80% 90% at 50% 0%, #134e78 0%, #06192e 50%, #020b14 100%);
+    border-radius: 50px;
+    padding: 80px 40px; 
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35); 
+}
+
+/* --- Header Styles --- */
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.testimonials-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+
+.testimonials-subtitle {
+    font-size: 18px;
+    color: #c1f7fd; 
+    font-weight: 400;
+}
+
+/* --- Grid Layout --- */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 10px; /* Space between grid and new pagination */
+}
+
+@media (min-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* ==================================================== */
+/* 3. TESTIMONIAL CARD (Individual White Boxes) */
+/* ==================================================== */
+.testimonial-card {
+    position: relative;
+    background-color: white;
+    border-radius: 16px; 
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Quote Icons --- */
+.quote-icon-top, .quote-icon-bottom {
+    position: absolute;
+    font-family: sans-serif;
+    font-size: 80px;
+    color: #083c43;
+    opacity: 0.6;
+    line-height: 0;
+}
+
+.quote-icon-top {
+    top: 40px;
+    left: 20px;
+    z-index: 0;
+}
+
+.quote-icon-bottom {
+    bottom: 10px;
+    right: 20px;
+    z-index: 0;
+}
+
+/* --- Content & Typography --- */
+.card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.testimonial-quote {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #121315;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+/* --- FOOTER (REVERTED TO ORIGINAL STATE) --- */
+.testimonial-footer {
+    margin-top: auto;
+    /* Removed flex properties as navigation is no longer here */
+}
+
+.testimonial-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #162647;
+    margin-bottom: 4px;
+}
+
+.testimonial-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0d464f;
+    margin-bottom: 2px;
+}
+
+.testimonial-company {
+    font-size: 14px;
+    color: #1e222a;
+}
+
+/* --- TESTIMONIAL PAGINATION (NEW STYLES) --- */
+.testimonials-pagination {
+    display: flex;
+    justify-content: center; /* Center the dots */
+    margin-top: 40px; /* Space above the dots */
+    gap: 10px;
+}
+
+.pagination-dot {
+    width: 10px; /* Standard dot width */
+    height: 10px;
+    background-color: #f6f8f8; /* Light teal for inactive dots */
+    border-radius: 50%; /* Makes it a circle */
+    cursor: pointer;
+    transition: width 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Transition width for the pill effect */
+}
+
+/* Style for the active/clicked button (Cylinder/Pill shape) */
+.pagination-dot.active-pill {
+    width: 40px; /* Wider for the pill effect */
+    border-radius: 10px; /* Makes the corners rounded for the pill shape */
+    background-color: #ffffff; /* White color for the active pill */
+    transform: none; /* Reset transform */
+}
+
+.pagination-dot:hover {
+    background-color: #2d4a4f; /* Lighter teal on hover */
+}
